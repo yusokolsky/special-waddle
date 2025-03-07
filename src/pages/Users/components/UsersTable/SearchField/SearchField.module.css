@@ -1,0 +1,18 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.searchInput {
+  width: 440px;
+}
+
+.searchIcon {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.searchButton,
+.resetButton {
+  min-width: 100px;
+}

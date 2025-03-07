@@ -1,0 +1,34 @@
+.header {
+  padding: 0 24px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+.profileButton {
+  height: 48px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.username {
+  margin-left: 8px;
+  color: var(--text-primary);
+} 

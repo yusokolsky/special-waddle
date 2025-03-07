@@ -1,34 +1,18 @@
 import { FC, ReactElement } from "react";
 import { Routes, Route, Navigate } from "react-router";
 import { ErrorBoundary } from "@/shared/components/ErrorBoundary/ErrorBoundary";
-import Layout from "./shared/components/Layout/Layout.tsx";
+import ProtectedRoute from "@/shared/components/ProtectedRoute/ProtectedRoute";
+import Layout from "./shared/components/Layout/Layout";
 import Login from "./pages/Login";
 import Users from "./pages/Users";
 import Dashboard from "./pages/Dashboard";
 import { useAuth } from "@/shared/hooks/useAuth";
 
-interface ProtectedRouteProps {
-  element: ReactElement;
-}
-
 /**
- * Main application component that handles routing and authentication
- * Implements protected routes and redirects
+ * Main application component that handles routing
  */
 const App: FC = (): ReactElement => {
   const { isAuthenticated } = useAuth();
-
-  /**
-   * Protect routes that require authentication
-   * Redirect to login if not authenticated
-   */
-  const ProtectedRoute: FC<ProtectedRouteProps> = ({
-    element,
-  }): ReactElement => {
-    return isAuthenticated
-      ? element
-      : ((<Navigate to="/login" replace />) as ReactElement);
-  };
 
   return (
     <ErrorBoundary>
@@ -50,7 +34,7 @@ const App: FC = (): ReactElement => {
         </Route>
       </Routes>
     </ErrorBoundary>
-  ) as ReactElement;
+  );
 };
 
 export default App;

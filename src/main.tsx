@@ -1,20 +1,20 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { createRoot } from 'react-dom/client';
-import { ConfigProvider } from 'antd';
-import { BrowserRouter } from 'react-router';
-import { store } from './store';
-import App from './App';
-import './index.css';
-import '@ant-design/v5-patch-for-react-19';
+import React from "react";
+import { Provider } from "react-redux";
+import { createRoot } from "react-dom/client";
+import { ConfigProvider } from "antd";
+import { BrowserRouter } from "react-router";
+import { store } from "./store";
+import App from "./App";
+import "./index.css";
+import "@ant-design/v5-patch-for-react-19";
 
 /**
  * Get root element and throw error if not found
  * This is a type-safe way to get the root element
  */
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 if (!rootElement) {
-  throw new Error('Failed to find the root element');
+  throw new Error("Failed to find the root element");
 }
 
 const root = createRoot(rootElement);
@@ -29,17 +29,11 @@ const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: '#00b96b',
-          },
-        }}
-      >
+      <ConfigProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
       </ConfigProvider>
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
